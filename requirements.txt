@@ -1,0 +1,2 @@
+# No se requieren dependencias externas para el backend.
+# Solo se usa la librería estándar de Python 3.10+.

@@ -1,1 +1,171 @@
-{}
+{
+  "airports": [
+    {"iata_code": "BOG", "name": "El Dorado", "city": "Bogotá", "country": "Colombia", "timezone": "America/Bogota", "is_hub": true, "lodging_cost": 60, "meal_cost": 15, "activities": [
+      {"name": "Tour Museo del Oro", "type": "optional", "duration_min": 120, "cost_usd": 20},
+      {"name": "Café colombiano", "type": "optional", "duration_min": 45, "cost_usd": 8}
+    ], "jobs": [
+      {"name": "Maletero", "hourly_rate": 5, "max_hours": 8},
+      {"name": "Guía turístico", "hourly_rate": 10, "max_hours": 4}
+    ], "airlines": ["Avianca", "LATAM", "Copa"]},
+    {"iata_code": "MDE", "name": "José María Córdova", "city": "Medellín", "country": "Colombia", "timezone": "America/Bogota", "is_hub": false, "lodging_cost": 50, "meal_cost": 12, "activities": [
+      {"name": "Tour Graffiti", "type": "optional", "duration_min": 90, "cost_usd": 15},
+      {"name": "Café paisa", "type": "optional", "duration_min": 30, "cost_usd": 6}
+    ], "jobs": [
+      {"name": "Recepcionista", "hourly_rate": 7, "max_hours": 6},
+      {"name": "Conductor", "hourly_rate": 8, "max_hours": 5}
+    ], "airlines": ["Viva Air", "Avianca"]},
+    {"iata_code": "CLO", "name": "Alfonso Bonilla Aragón", "city": "Cali", "country": "Colombia", "timezone": "America/Bogota", "is_hub": false, "lodging_cost": 45, "meal_cost": 10, "activities": [
+      {"name": "Clase de salsa", "type": "optional", "duration_min": 60, "cost_usd": 12},
+      {"name": "Tour de frutas", "type": "optional", "duration_min": 40, "cost_usd": 7}
+    ], "jobs": [
+      {"name": "Barista", "hourly_rate": 6, "max_hours": 5},
+      {"name": "Animador", "hourly_rate": 9, "max_hours": 4}
+    ], "airlines": ["Avianca", "LATAM"]},
+    {"iata_code": "CTG", "name": "Rafael Núñez", "city": "Cartagena", "country": "Colombia", "timezone": "America/Bogota", "is_hub": true, "lodging_cost": 70, "meal_cost": 18, "activities": [
+      {"name": "Tour murallas", "type": "optional", "duration_min": 90, "cost_usd": 18},
+      {"name": "Playa Bocagrande", "type": "optional", "duration_min": 120, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Salvavidas", "hourly_rate": 8, "max_hours": 6},
+      {"name": "Vendedor", "hourly_rate": 5, "max_hours": 8}
+    ], "airlines": ["Wingo", "Avianca"]},
+    {"iata_code": "BAQ", "name": "Ernesto Cortissoz", "city": "Barranquilla", "country": "Colombia", "timezone": "America/Bogota", "is_hub": false, "lodging_cost": 40, "meal_cost": 9, "activities": [
+      {"name": "Carnaval", "type": "optional", "duration_min": 180, "cost_usd": 25},
+      {"name": "Tour río Magdalena", "type": "optional", "duration_min": 60, "cost_usd": 10}
+    ], "jobs": [
+      {"name": "Animador", "hourly_rate": 7, "max_hours": 5},
+      {"name": "Guía", "hourly_rate": 10, "max_hours": 3}
+    ], "airlines": ["Avianca", "LATAM"]},
+    {"iata_code": "GRU", "name": "Guarulhos", "city": "São Paulo", "country": "Brasil", "timezone": "America/Sao_Paulo", "is_hub": true, "lodging_cost": 80, "meal_cost": 20, "activities": [
+      {"name": "Tour Paulista", "type": "optional", "duration_min": 120, "cost_usd": 22},
+      {"name": "Café brasileño", "type": "optional", "duration_min": 30, "cost_usd": 7}
+    ], "jobs": [
+      {"name": "Recepcionista", "hourly_rate": 9, "max_hours": 6},
+      {"name": "Guía", "hourly_rate": 12, "max_hours": 4}
+    ], "airlines": ["LATAM", "Gol"]},
+    {"iata_code": "GIG", "name": "Galeão", "city": "Río de Janeiro", "country": "Brasil", "timezone": "America/Sao_Paulo", "is_hub": true, "lodging_cost": 75, "meal_cost": 19, "activities": [
+      {"name": "Cristo Redentor", "type": "optional", "duration_min": 120, "cost_usd": 25},
+      {"name": "Playa Copacabana", "type": "optional", "duration_min": 120, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Salvavidas", "hourly_rate": 10, "max_hours": 5},
+      {"name": "Guía", "hourly_rate": 13, "max_hours": 4}
+    ], "airlines": ["LATAM", "Gol"]},
+    {"iata_code": "SSA", "name": "Deputado Luís Eduardo Magalhães", "city": "Salvador", "country": "Brasil", "timezone": "America/Bahia", "is_hub": false, "lodging_cost": 60, "meal_cost": 15, "activities": [
+      {"name": "Pelourinho", "type": "optional", "duration_min": 90, "cost_usd": 12},
+      {"name": "Playa Porto da Barra", "type": "optional", "duration_min": 120, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Vendedor", "hourly_rate": 6, "max_hours": 7},
+      {"name": "Guía", "hourly_rate": 11, "max_hours": 4}
+    ], "airlines": ["Gol", "Azul"]},
+    {"iata_code": "LIM", "name": "Jorge Chávez", "city": "Lima", "country": "Perú", "timezone": "America/Lima", "is_hub": true, "lodging_cost": 65, "meal_cost": 16, "activities": [
+      {"name": "Tour Miraflores", "type": "optional", "duration_min": 90, "cost_usd": 15},
+      {"name": "Ceviche", "type": "optional", "duration_min": 60, "cost_usd": 10}
+    ], "jobs": [
+      {"name": "Chef", "hourly_rate": 12, "max_hours": 4},
+      {"name": "Guía", "hourly_rate": 10, "max_hours": 5}
+    ], "airlines": ["LATAM", "Avianca"]},
+    {"iata_code": "CUZ", "name": "Alejandro Velasco Astete", "city": "Cusco", "country": "Perú", "timezone": "America/Lima", "is_hub": false, "lodging_cost": 55, "meal_cost": 13, "activities": [
+      {"name": "Tour Machu Picchu", "type": "optional", "duration_min": 180, "cost_usd": 30},
+      {"name": "Mercado San Pedro", "type": "optional", "duration_min": 60, "cost_usd": 5}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 11, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 7, "max_hours": 6}
+    ], "airlines": ["LATAM", "Avianca"]},
+    {"iata_code": "SCL", "name": "Arturo Merino Benítez", "city": "Santiago", "country": "Chile", "timezone": "America/Santiago", "is_hub": true, "lodging_cost": 70, "meal_cost": 18, "activities": [
+      {"name": "Tour viñedos", "type": "optional", "duration_min": 120, "cost_usd": 22},
+      {"name": "Café chileno", "type": "optional", "duration_min": 30, "cost_usd": 7}
+    ], "jobs": [
+      {"name": "Barista", "hourly_rate": 8, "max_hours": 5},
+      {"name": "Guía", "hourly_rate": 12, "max_hours": 4}
+    ], "airlines": ["LATAM", "Sky"]},
+    {"iata_code": "EZE", "name": "Ministro Pistarini", "city": "Buenos Aires", "country": "Argentina", "timezone": "America/Argentina/Buenos_Aires", "is_hub": true, "lodging_cost": 75, "meal_cost": 19, "activities": [
+      {"name": "Tango show", "type": "optional", "duration_min": 120, "cost_usd": 25},
+      {"name": "Tour Caminito", "type": "optional", "duration_min": 90, "cost_usd": 15}
+    ], "jobs": [
+      {"name": "Bailarín", "hourly_rate": 15, "max_hours": 3},
+      {"name": "Guía", "hourly_rate": 10, "max_hours": 5}
+    ], "airlines": ["Aerolineas Argentinas", "LATAM"]},
+    {"iata_code": "AEP", "name": "Aeroparque Jorge Newbery", "city": "Buenos Aires", "country": "Argentina", "timezone": "America/Argentina/Buenos_Aires", "is_hub": false, "lodging_cost": 60, "meal_cost": 14, "activities": [
+      {"name": "Tour Palermo", "type": "optional", "duration_min": 60, "cost_usd": 10},
+      {"name": "Café porteño", "type": "optional", "duration_min": 30, "cost_usd": 6}
+    ], "jobs": [
+      {"name": "Barista", "hourly_rate": 7, "max_hours": 5},
+      {"name": "Guía", "hourly_rate": 9, "max_hours": 4}
+    ], "airlines": ["Aerolineas Argentinas", "LATAM"]},
+    {"iata_code": "UIO", "name": "Mariscal Sucre", "city": "Quito", "country": "Ecuador", "timezone": "America/Guayaquil", "is_hub": true, "lodging_cost": 65, "meal_cost": 16, "activities": [
+      {"name": "Mitad del Mundo", "type": "optional", "duration_min": 90, "cost_usd": 15},
+      {"name": "Tour Centro Histórico", "type": "optional", "duration_min": 60, "cost_usd": 8}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 10, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 7, "max_hours": 6}
+    ], "airlines": ["Avianca", "LATAM"]},
+    {"iata_code": "GYE", "name": "José Joaquín de Olmedo", "city": "Guayaquil", "country": "Ecuador", "timezone": "America/Guayaquil", "is_hub": false, "lodging_cost": 55, "meal_cost": 13, "activities": [
+      {"name": "Malecón 2000", "type": "optional", "duration_min": 60, "cost_usd": 10},
+      {"name": "Tour Isla Santay", "type": "optional", "duration_min": 90, "cost_usd": 12}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 9, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 6, "max_hours": 6}
+    ], "airlines": ["Avianca", "LATAM"]},
+    {"iata_code": "CCS", "name": "Simón Bolívar", "city": "Caracas", "country": "Venezuela", "timezone": "America/Caracas", "is_hub": false, "lodging_cost": 50, "meal_cost": 12, "activities": [
+      {"name": "Av. Bolívar", "type": "optional", "duration_min": 60, "cost_usd": 8},
+      {"name": "Tour El Ávila", "type": "optional", "duration_min": 120, "cost_usd": 15}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 8, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 6, "max_hours": 6}
+    ], "airlines": ["Conviasa", "Avior"]},
+    {"iata_code": "MIA", "name": "Miami Intl", "city": "Miami", "country": "USA", "timezone": "America/New_York", "is_hub": true, "lodging_cost": 90, "meal_cost": 25, "activities": [
+      {"name": "Shopping", "type": "optional", "duration_min": 120, "cost_usd": 30},
+      {"name": "Tour South Beach", "type": "optional", "duration_min": 90, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Vendedor", "hourly_rate": 12, "max_hours": 6},
+      {"name": "Guía", "hourly_rate": 15, "max_hours": 4}
+    ], "airlines": ["American Airlines", "LATAM"]},
+    {"iata_code": "JFK", "name": "John F. Kennedy", "city": "New York", "country": "USA", "timezone": "America/New_York", "is_hub": true, "lodging_cost": 100, "meal_cost": 28, "activities": [
+      {"name": "Tour Manhattan", "type": "optional", "duration_min": 120, "cost_usd": 35},
+      {"name": "Central Park", "type": "optional", "duration_min": 90, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 18, "max_hours": 4},
+      {"name": "Vendedor", "hourly_rate": 14, "max_hours": 6}
+    ], "airlines": ["Delta", "American Airlines"]},
+    {"iata_code": "MEX", "name": "Benito Juárez", "city": "Ciudad de México", "country": "México", "timezone": "America/Mexico_City", "is_hub": true, "lodging_cost": 80, "meal_cost": 20, "activities": [
+      {"name": "Tour Teotihuacán", "type": "optional", "duration_min": 120, "cost_usd": 25},
+      {"name": "Café mexicano", "type": "optional", "duration_min": 30, "cost_usd": 7}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 13, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 10, "max_hours": 6}
+    ], "airlines": ["Aeroméxico", "Volaris"]},
+    {"iata_code": "CUN", "name": "Cancún Intl", "city": "Cancún", "country": "México", "timezone": "America/Cancun", "is_hub": false, "lodging_cost": 70, "meal_cost": 18, "activities": [
+      {"name": "Playa Delfines", "type": "optional", "duration_min": 120, "cost_usd": 0},
+      {"name": "Tour Chichén Itzá", "type": "optional", "duration_min": 120, "cost_usd": 28}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 12, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 9, "max_hours": 6}
+    ], "airlines": ["Aeroméxico", "Volaris"]},
+    {"iata_code": "PTY", "name": "Tocumen", "city": "Panamá", "country": "Panamá", "timezone": "America/Panama", "is_hub": true, "lodging_cost": 85, "meal_cost": 22, "activities": [
+      {"name": "Canal de Panamá", "type": "optional", "duration_min": 120, "cost_usd": 20},
+      {"name": "Tour Casco Viejo", "type": "optional", "duration_min": 90, "cost_usd": 10}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 14, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 11, "max_hours": 6}
+    ], "airlines": ["Copa", "Avianca"]},
+    {"iata_code": "HAV", "name": "José Martí", "city": "La Habana", "country": "Cuba", "timezone": "America/Havana", "is_hub": false, "lodging_cost": 60, "meal_cost": 15, "activities": [
+      {"name": "Tour Habana Vieja", "type": "optional", "duration_min": 120, "cost_usd": 18},
+      {"name": "Playa Santa María", "type": "optional", "duration_min": 120, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 10, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 8, "max_hours": 6}
+    ], "airlines": ["Cubana", "Aeroméxico"]},
+    {"iata_code": "SDQ", "name": "Las Américas", "city": "Santo Domingo", "country": "República Dominicana", "timezone": "America/Santo_Domingo", "is_hub": false, "lodging_cost": 65, "meal_cost": 16, "activities": [
+      {"name": "Zona Colonial", "type": "optional", "duration_min": 90, "cost_usd": 12},
+      {"name": "Playa Boca Chica", "type": "optional", "duration_min": 120, "cost_usd": 0}
+    ], "jobs": [
+      {"name": "Guía", "hourly_rate": 11, "max_hours": 5},
+      {"name": "Vendedor", "hourly_rate": 9, "max_hours": 6}
+    ], "airlines": ["Arajet", "American Airlines"]}
+  ],
+  "routes": [
+    ...existing code...
+  ],
+  "config": {
+    ...existing code...
+  }
+}
