@@ -1,8 +1,8 @@
 from typing import Dict, List, Optional
 from backend.models.airport import Aeropuerto
 from backend.models.route import Ruta
-from backend.core.node import Nodo
-from backend.core.edge import Arista
+from backend.core.nodo import Nodo
+from backend.core.arista import Arista
 from backend.interfaces.i_graph import IGraph
 
 class Grafo(IGraph):
@@ -99,3 +99,4 @@ class Grafo(IGraph):
         :return: Lista de nodos hubs.
         """
         return [n for n in self._nodos.values() if n.aeropuerto.es_centro]
+

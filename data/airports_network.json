@@ -161,11 +161,603 @@
       {"name": "Guía", "hourly_rate": 11, "max_hours": 5},
       {"name": "Vendedor", "hourly_rate": 9, "max_hours": 6}
     ], "airlines": ["Arajet", "American Airlines"]}
+      ,
+      {"iata_code": "FOR", "name": "Pinto Martins", "city": "Fortaleza", "country": "Brasil", "timezone": "America/Fortaleza", "is_hub": false, "lodging_cost": 55, "meal_cost": 13, "activities": [
+        {"name": "Praia do Futuro", "type": "optional", "duration_min": 120, "cost_usd": 0},
+        {"name": "Mercado Central", "type": "optional", "duration_min": 60, "cost_usd": 8}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 8, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 7, "max_hours": 6}
+      ], "airlines": ["Gol", "LATAM"]},
+      {"iata_code": "REC", "name": "Guararapes", "city": "Recife", "country": "Brasil", "timezone": "America/Recife", "is_hub": false, "lodging_cost": 58, "meal_cost": 14, "activities": [
+        {"name": "Playa Boa Viagem", "type": "optional", "duration_min": 120, "cost_usd": 0},
+        {"name": "Instituto Ricardo Brennand", "type": "optional", "duration_min": 90, "cost_usd": 10}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 9, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 8, "max_hours": 6}
+      ], "airlines": ["Azul", "Gol"]},
+      {"iata_code": "POA", "name": "Salgado Filho", "city": "Porto Alegre", "country": "Brasil", "timezone": "America/Sao_Paulo", "is_hub": false, "lodging_cost": 60, "meal_cost": 15, "activities": [
+        {"name": "Parque Farroupilha", "type": "optional", "duration_min": 90, "cost_usd": 0},
+        {"name": "Mercado Público", "type": "optional", "duration_min": 60, "cost_usd": 7}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 10, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 8, "max_hours": 6}
+      ], "airlines": ["Gol", "LATAM"]},
+      {"iata_code": "BSB", "name": "Presidente Juscelino Kubitschek", "city": "Brasilia", "country": "Brasil", "timezone": "America/Sao_Paulo", "is_hub": true, "lodging_cost": 70, "meal_cost": 17, "activities": [
+        {"name": "Plaza de los Tres Poderes", "type": "optional", "duration_min": 90, "cost_usd": 0},
+        {"name": "Catedral de Brasilia", "type": "optional", "duration_min": 60, "cost_usd": 10}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 11, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 9, "max_hours": 6}
+      ], "airlines": ["Gol", "LATAM"]},
+      {"iata_code": "BOA", "name": "Viru Viru", "city": "Santa Cruz", "country": "Bolivia", "timezone": "America/La_Paz", "is_hub": false, "lodging_cost": 50, "meal_cost": 12, "activities": [
+        {"name": "Tour Jesuitas", "type": "optional", "duration_min": 90, "cost_usd": 12},
+        {"name": "Parque Urbano", "type": "optional", "duration_min": 60, "cost_usd": 0}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 8, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 6, "max_hours": 6}
+      ], "airlines": ["LATAM", "Avianca"]},
+      {"iata_code": "TRU", "name": "Capitán de Corbeta Carlos Ibáñez del Campo", "city": "Punta Arenas", "country": "Chile", "timezone": "America/Santiago", "is_hub": false, "lodging_cost": 65, "meal_cost": 16, "activities": [
+        {"name": "Tour Punta Arenas", "type": "optional", "duration_min": 90, "cost_usd": 15},
+        {"name": "Penguin Tour", "type": "optional", "duration_min": 120, "cost_usd": 20}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 12, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 9, "max_hours": 6}
+      ], "airlines": ["LATAM", "Sky"]},
+      {"iata_code": "MGA", "name": "Camilo Daza", "city": "Cúcuta", "country": "Colombia", "timezone": "America/Bogota", "is_hub": false, "lodging_cost": 45, "meal_cost": 11, "activities": [
+        {"name": "Tour Puente Internacional", "type": "optional", "duration_min": 60, "cost_usd": 10},
+        {"name": "Mercado de Cúcuta", "type": "optional", "duration_min": 45, "cost_usd": 5}
+      ], "jobs": [
+        {"name": "Guía", "hourly_rate": 8, "max_hours": 5},
+        {"name": "Vendedor", "hourly_rate": 7, "max_hours": 6}
+      ], "airlines": ["Avianca", "LATAM"]}
   ],
   "routes": [
-    ...existing code...
+    {
+      "origin": "BOG",
+      "destination": "MDE",
+      "distance_km": 1440,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 0,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MDE",
+      "destination": "CLO",
+      "distance_km": 1435,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 0,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CLO",
+      "destination": "CTG",
+      "distance_km": 827,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 0,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CTG",
+      "destination": "BAQ",
+      "distance_km": 397,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 0,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "BAQ",
+      "destination": "GRU",
+      "distance_km": 2379,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 0,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "GRU",
+      "destination": "GIG",
+      "distance_km": 2463,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 254,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "GIG",
+      "destination": "SSA",
+      "distance_km": 2871,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 162,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SSA",
+      "destination": "LIM",
+      "distance_km": 760,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 125,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "LIM",
+      "destination": "CUZ",
+      "distance_km": 1454,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 163,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CUZ",
+      "destination": "SCL",
+      "distance_km": 1964,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 51,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SCL",
+      "destination": "EZE",
+      "distance_km": 2895,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 77,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "EZE",
+      "destination": "AEP",
+      "distance_km": 221,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 276,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "AEP",
+      "destination": "UIO",
+      "distance_km": 2032,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 81,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "UIO",
+      "destination": "GYE",
+      "distance_km": 1111,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 262,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "GYE",
+      "destination": "CCS",
+      "distance_km": 233,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 91,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CCS",
+      "destination": "MIA",
+      "distance_km": 2287,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 208,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MIA",
+      "destination": "JFK",
+      "distance_km": 2947,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 61,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "JFK",
+      "destination": "MEX",
+      "distance_km": 2189,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 93,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MEX",
+      "destination": "CUN",
+      "distance_km": 2868,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 125,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CUN",
+      "destination": "PTY",
+      "distance_km": 2755,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 223,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "PTY",
+      "destination": "HAV",
+      "distance_km": 2648,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 254,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "HAV",
+      "destination": "SDQ",
+      "distance_km": 2773,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 164,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SDQ",
+      "destination": "FOR",
+      "distance_km": 1061,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 115,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "FOR",
+      "destination": "REC",
+      "distance_km": 2116,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 196,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "REC",
+      "destination": "POA",
+      "distance_km": 2636,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 189,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "POA",
+      "destination": "BSB",
+      "distance_km": 721,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 206,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "BSB",
+      "destination": "BOA",
+      "distance_km": 1302,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 255,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "BOA",
+      "destination": "TRU",
+      "distance_km": 789,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 160,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "TRU",
+      "destination": "MGA",
+      "distance_km": 2128,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 275,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MGA",
+      "destination": "BOG",
+      "distance_km": 1712,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 166,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SSA",
+      "destination": "BSB",
+      "distance_km": 2094,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 179,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MDE",
+      "destination": "GIG",
+      "distance_km": 1655,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 112,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "POA",
+      "destination": "GIG",
+      "distance_km": 1980,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 176,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CTG",
+      "destination": "POA",
+      "distance_km": 2242,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 213,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "EZE",
+      "destination": "CCS",
+      "distance_km": 290,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 165,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CUZ",
+      "destination": "CTG",
+      "distance_km": 815,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 183,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "FOR",
+      "destination": "GYE",
+      "distance_km": 1747,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 152,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MEX",
+      "destination": "HAV",
+      "distance_km": 875,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 175,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SSA",
+      "destination": "UIO",
+      "distance_km": 1269,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 88,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "BOG",
+      "destination": "EZE",
+      "distance_km": 2413,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 58,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "BOG",
+      "destination": "HAV",
+      "distance_km": 1617,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 68,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "LIM",
+      "destination": "GRU",
+      "distance_km": 2442,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 194,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "GRU",
+      "destination": "PTY",
+      "distance_km": 1898,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 211,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "EZE",
+      "destination": "BAQ",
+      "distance_km": 2526,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 235,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "REC",
+      "destination": "FOR",
+      "distance_km": 2217,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 92,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "REC",
+      "destination": "BAQ",
+      "distance_km": 1532,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 239,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "GIG",
+      "destination": "GRU",
+      "distance_km": 585,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 211,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "JFK",
+      "destination": "MGA",
+      "distance_km": 2425,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 211,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SCL",
+      "destination": "CTG",
+      "distance_km": 2350,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 288,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MDE",
+      "destination": "BAQ",
+      "distance_km": 2402,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 294,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "PTY",
+      "destination": "SSA",
+      "distance_km": 2863,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 120,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SDQ",
+      "destination": "LIM",
+      "distance_km": 1748,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 87,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "HAV",
+      "destination": "GIG",
+      "distance_km": 2333,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 268,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "SSA",
+      "destination": "MEX",
+      "distance_km": 2726,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 92,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "LIM",
+      "destination": "TRU",
+      "distance_km": 2579,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 195,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "MGA",
+      "destination": "MIA",
+      "distance_km": 442,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 68,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CUN",
+      "destination": "UIO",
+      "distance_km": 310,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 181,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "CUZ",
+      "destination": "JFK",
+      "distance_km": 1814,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 70,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "LIM",
+      "destination": "CLO",
+      "distance_km": 2226,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 280,
+      "min_stay_minutes": 90,
+      "is_blocked": false
+    },
+    {
+      "origin": "PTY",
+      "destination": "BOG",
+      "distance_km": 1095,
+      "aircraft_types": ["Comercial", "Regional"],
+      "base_cost": 69,
+      "min_stay_minutes": 90,
+       "is_blocked": true
+    }
   ],
   "config": {
-    ...existing code...
+    "budget_threshold_pct": 0.35,
+    "lodging_interval_hours": 20,
+    "meal_interval_hours": 8,
+    "subsidized_route_max_pct": 0.20
   }
 }

@@ -3,7 +3,7 @@ from typing import Dict, Any, Set
 from backend.interfaces.i_algorithm import IAlgorithm
 from backend.interfaces.i_graph import IGraph
 from backend.models.aircraft import Aeronave
-from backend.core.edge import Arista
+from backend.core.arista import Arista
 
 class AlgoritmoBase(IAlgorithm, ABC):
     """
@@ -17,11 +17,11 @@ class AlgoritmoBase(IAlgorithm, ABC):
         self.grafo = grafo
 
     @abstractmethod
-    def execute(self, origen: str, **kwargs) -> Dict:
+    def execute(self, *args, **kwargs) -> Dict:
         """
         Método abstracto para ejecutar el algoritmo desde un nodo origen.
         Requerimiento: Permitir diferentes algoritmos de búsqueda de rutas.
-        :param origen: Código IATA de aeropuerto origen.
+        :param args: Argumentos posicionales del algoritmo.
         :param kwargs: Otros parámetros del algoritmo.
         :return: Diccionario con los resultados del algoritmo.
         """

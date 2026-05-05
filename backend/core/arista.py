@@ -13,12 +13,13 @@ class Arista:
     def calcular_costo(self, aeronave: 'Aeronave') -> float:
         """
         Calcula el costo de recorrer esta arista con una aeronave dada.
+        Costo total = costo_base + (distancia_km * costo_por_km de la aeronave)
         :param aeronave: Aeronave a usar para el cálculo.
         :return: Costo total como float.
         """
-        if self.ruta.costo_base == 0:
-            return 0.0
-        return self.ruta.distancia_km * aeronave.costo_por_km
+        # Costo base de la ruta + costo variable por distancia
+        costo_variable = self.ruta.distancia_km * aeronave.costo_por_km
+        return self.ruta.costo_base + costo_variable
 
     def calcular_tiempo(self, aeronave: 'Aeronave') -> float:
         """

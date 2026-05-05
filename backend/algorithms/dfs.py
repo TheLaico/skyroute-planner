@@ -1,22 +1,24 @@
 from typing import Dict, List, Set, Any
 from backend.algorithms.base_algorithm import AlgoritmoBase
-from backend.core.edge import Arista
-from backend.core.node import Nodo
+from backend.core.arista import Arista
+from backend.core.nodo import Nodo
 
 class DFS(AlgoritmoBase):
     """
     Implementación de búsqueda en profundidad (DFS) recursiva con backtracking.
     DFS con backtracking es apropiado para R3 porque permite explorar exhaustivamente todas las rutas posibles, tomar decisiones dinámicas y retroceder cuando se violan restricciones como el presupuesto.
     """
-    def execute(self, origen: str, presupuesto: float, tipos_aeronave: List[str], optimizar: str = "destinations") -> Dict:
+    def execute(self, origen: str, **kwargs) -> Dict:
         """
         Ejecuta DFS recursivo para encontrar la mejor ruta según el criterio de optimización.
         :param origen: Código IATA de aeropuerto origen.
-        :param presupuesto: Presupuesto máximo permitido.
-        :param tipos_aeronave: Lista de tipos de aeronave a usar (en orden de preferencia).
-        :param optimizar: "destinations" o "cost".
+        :param kwargs: presupuesto (float), tipos_aeronave (List[str]), optimizar (str) - "destinations" o "cost".
         :return: Diccionario con el mejor resultado encontrado.
         """
+        presupuesto = kwargs.get('presupuesto', 10000.0)
+        tipos_aeronave = kwargs.get('tipos_aeronave', ['Comercial'])
+        optimizar = kwargs.get('optimizar', 'destinations')
+        
         self._mejor = {
             "best_path": [],
             "total_cost": float('inf') if optimizar == "cost" else 0.0,
@@ -88,3 +90,4 @@ class DFS(AlgoritmoBase):
             self._dfs(vecino, presupuesto, tipos_aeronave, visitados, camino, nuevo_costo, segmentos + [segmento], optimizar, profundidad + 1, max_profundidad)
         visitados.remove(actual)
         camino.pop()
+

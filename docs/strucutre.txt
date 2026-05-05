@@ -1,0 +1,95 @@
+skyroute-planner/
+├── backend/                                 núcleo de lógica en Python
+│   ├── core/                                estructuras de datos base (SRP)
+│   │   ├── graph.py                         clase Graph con lista de adyacencia implementada desde cero
+│   │   ├── node.py                          clase Nodo (aeropuerto) con sus atributos
+│   │   └── edge.py                          clase Arista (ruta) con distancia, aeronaves y costoBase
+│   ├── algorithms/                          algoritmos desacoplados por OCP
+│   │   ├── dijkstra.py                      camino mínimo por costo, tiempo o distancia (R2)
+│   │   ├── bfs.py                           mayor cantidad de destinos visitables (R2a)
+│   │   ├── dfs.py                           exploración exhaustiva con backtracking (R3)
+│   │   └── base_algorithm.py                interfaz abstracta común (ISP/OCP)
+│   ├── services/                            lógica de negocio, una responsabilidad por servicio
+│   │   ├── route_planner.py                 orquesta el cálculo de rutas según criterio elegido
+│   │   ├── itinerary_service.py             construye y valida el itinerario paso a paso
+│   │   ├── budget_manager.py                gestiona presupuesto, trabajos y umbral del 35%
+│   │   ├── interruption_service.py          loquea aristas y recalcula ruta alternativa (R4)
+│   │   └── report_service.py                genera el reporte final con totales y desglose (R5)
+│   ├── models/                              entidades de dominio (puras, sin lógica)
+│   │   ├── airport.py                       datos del aeropuerto: IATA, ciudad, hub, costos
+│   │   ├── route.py                         tramo entre aeropuertos con aeronaves disponibles
+│   │   ├── aircraft.py                      tipo de aeronave con costoKm y tiempoKm
+│   │   ├── activity.py                      actividad (obligatoria/opcional) con duración y costo
+│   │   ├── job.py                           temporal con tarifaHora y maxHoras
+│   │   └── itinerary.py                     estructura que acumula el viaje completo del viajero
+│   ├── interfaces/                          contratos abstractos (DIP/ISP)
+│   │   ├── i_graph.py                       protocolo que debe cumplir cualquier implementación de grafo
+│   │   ├── i_algorithm.py                   contrato abstracto para algoritmos de búsqueda
+│   │   └── i_service.py                     interfaz base para servicios inyectables
+│   ├── loaders/                             carga e inicialización del grafo desde JSON
+│   │   ├── json_loader.py                   lee y valida el archivo JSON de la red aérea
+│   │   └── graph_builder.py                 construye el grafo a partir de los datos cargados
+│   ├── api/                                 capa REST (FastAPI)
+│   │   ├── main.py                          punto de entrada de la aplicación FastAPI
+│   │   ├── routes/                          endpoints agrupados por dominio
+│   │   │   ├── graph_routes.py              endpoints de carga y consulta del grafo
+│   │   │   ├── planner_routes.py            endpoints de planificación básica y avanzada
+│   │   │   └── report_routes.py             endpoint para generar el reporte final
+│   │   └── schemas/                         modelos Pydantic para validación de entrada/salida
+│   │       ├── airport_schema.py            esquema de datos del aeropuerto para la API
+│   │       └── route_schema.py              esquema de ruta y criterios de optimización
+│   ├── utils/                               funciones auxiliares sin estado
+│   │   ├── time_calculator.py               calcula tiempos de vuelo, alojamiento y alimentación
+│   │   ├── cost_calculator.py               calcula costos por tramo según aeronave y distancia
+│   │   └── validators.py                    valida restricciones de presupuesto, tiempo y repetición de nodos
+│   └── config.py                            configuración global: valores por defecto de aeronaves e intervalos
+│
+├── frontend/                                interfaz visual en React
+│   ├── public/
+│   │   └── index.html                               HTML base de la SPA
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── graph/                               visualización del grafo (R1)
+│   │   │   │   ├── GraphCanvas.jsx                                  lienzo principal que renderiza nodos y aristas
+│   │   │   │   ├── AirportNode.jsx                                  nodo visual: diferencia hub vs secundario, muestra info al click
+│   │   │   │   └── RouteEdge.jsx                                arista dirigida con distancia km y aeronave; color especial si bloqueada
+│   │   │   ├── planner/                                 planificación básica y avanzada (R2/R3)
+│   │   │   │   ├── PlannerForm.jsx                                  formulario: origen, destino, presupuesto, tiempo, criterios
+│   │   │   │   ├── ItineraryPanel.jsx                               muestra el itinerario propuesto paso a paso
+│   │   │   │   └── RouteOptions.jsx                                 presenta las aeronaves disponibles por tramo para que el usuario elija
+│   │   │   ├── simulation/                                  animación del vuelo e interrupciones (R4)
+│   │   │   │   ├── FlightSimulator.jsx                                  anima el desplazamiento del vuelo entre aeropuertos en tiempo n
+│   │   │   │   └── InterruptionControl.jsx                                  permite bloquear una ruta y dispara el recálculo
+│   │   │   ├── budget/                                  gestión dinámica de presupuesto (R3)
+│   │   │   │   ├── BudgetTracker.jsx                                muestra presupuesto actual, gastado y ganado en tiempo real
+│   │   │   │   ├── JobSelector.jsx                                  lista trabajos disponibles y permite elegir horas a trabajar
+│   │   │   │   └── ActivityPicker.jsx                               muestra actividades opcionales y obligatorias del destino actual
+│   │   │   ├── report/                                  reporte final (R5)
+│   │   │   │   └── FinalReport.jsx                                  resumen completo: destinos, tramos, actividades, trabajos y totales
+│   │   │   └── ui/                                  componentes de layout reutilizables
+│   │   │       ├── Sidebar.jsx                                  panel lateral con controles y estado del viaje
+│   │   │       ├── Navbar.jsx                               barra de navegación principal de la app
+│   │   │       └── Modal.jsx                                modal genérico para confirmaciones y detalles
+│   │   ├── hooks/                               lógica reutilizable desacoplada de la UI
+│   │   │   ├── useGraph.js                                  carga y actualiza el estado del grafo desde la API
+│   │   │   ├── usePlanner.js                                gestiona las solicitudes de planificación y resultados
+│   │   │   └── useBudget.js                                 controla el estado del presupuesto y trabajos tomados
+│   │   ├── context/                                 estado global compartido
+│   │   │   ├── GraphContext.jsx                                 provee el grafo y nodos seleccionados a toda la app
+│   │   │   └── TripContext.jsx                                  provee el estado del viaje en curso (itinerario, presupuesto, tiempo)
+│   │   ├── services/                                comunicación con el backend
+│   │   │   ├── apiClient.js                                 cliente HTTP base con manejo de errores centralizado
+│   │   │   └── graphService.js                                  funciones para consultar rutas, aeropuertos y resultados
+│   │   ├── utils/
+│   │   │   └── formatters.js                                formatea monedas, tiempos y distancias para mostrar en UI
+│   │   ├── App.jsx                                  componente raíz que ensambla la app y proveedores de contexto
+│   │   └── main.js                                  punto de entrada de React (ReactDOM.render)
+│   └── package.json                                 dependencias y scripts del frontend
+│
+├── data/
+│   └── airports_network.json                                red de prueba con mínimo 30 aeropuertos latinoamericanos
+├── docs/
+│   ├── manual_usuario.pdf                               guía de uso del sistema para el viajero
+│   └── manual_tecnico.pdf                               arquitectura, algoritmos y decisiones de diseño
+├── requirements.txt                                 dependencias Python (FastAPI, Uvicorn, Pydantic)
+└── README.md                                instrucciones de instalación y ejecución del proyecto

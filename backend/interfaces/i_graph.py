@@ -1,77 +1,74 @@
 from abc import ABC, abstractmethod
-from typing import Any, List, Dict
+from typing import Any, List
+
 
 class IGraph(ABC):
     @abstractmethod
-    def add_node(self, node: Any) -> None:
+    def agregar_nodo(self, *args, **kwargs) -> None:
         """
-        Add a node to the graph.
-        :param node: The node to add.
-        :return: None
-        """
-        pass
-
-    @abstractmethod
-    def add_edge(self, node1: Any, node2: Any, **kwargs) -> None:
-        """
-        Add an edge between two nodes.
-        :param node1: The first node.
-        :param node2: The second node.
-        :param kwargs: Additional edge attributes.
-        :return: None
+        Agrega un nodo al grafo.
+        :param args: Argumentos posicionales.
+        :param kwargs: Argumentos nombrados.
         """
         pass
 
     @abstractmethod
-    def get_neighbors(self, node: Any) -> List[Any]:
+    def agregar_arista(self, *args, **kwargs) -> None:
         """
-        Get the neighbors of a node.
-        :param node: The node to get neighbors for.
-        :return: List of neighboring nodes.
-        """
-        pass
-
-    @abstractmethod
-    def get_node(self, node_id: Any) -> Any:
-        """
-        Get a node by its identifier.
-        :param node_id: The identifier of the node.
-        :return: The node object.
+        Agrega una arista al grafo.
+        :param args: Argumentos posicionales.
+        :param kwargs: Argumentos nombrados.
         """
         pass
 
     @abstractmethod
-    def get_all_nodes(self) -> List[Any]:
+    def obtener_vecinos(self, codigo_iata: str) -> List[Any]:
         """
-        Get all nodes in the graph.
-        :return: List of all nodes.
-        """
-        pass
-
-    @abstractmethod
-    def get_all_edges(self) -> List[Any]:
-        """
-        Get all edges in the graph.
-        :return: List of all edges.
+        Obtiene los vecinos (aristas no bloqueadas) de un nodo.
+        :param codigo_iata: Código IATA del nodo.
+        :return: Lista de aristas no bloqueadas.
         """
         pass
 
     @abstractmethod
-    def block_edge(self, node1: Any, node2: Any) -> None:
+    def obtener_nodo(self, codigo_iata: str) -> Any:
         """
-        Block the edge between two nodes.
-        :param node1: The first node.
-        :param node2: The second node.
-        :return: None
+        Obtiene un nodo por su código IATA.
+        :param codigo_iata: Código IATA del nodo.
+        :return: El nodo o None.
         """
         pass
 
     @abstractmethod
-    def unblock_edge(self, node1: Any, node2: Any) -> None:
+    def obtener_todos_nodos(self) -> List[Any]:
         """
-        Unblock the edge between two nodes.
-        :param node1: The first node.
-        :param node2: The second node.
-        :return: None
+        Retorna todos los nodos del grafo.
+        :return: Lista de nodos.
+        """
+        pass
+
+    @abstractmethod
+    def obtener_todas_aristas(self) -> List[Any]:
+        """
+        Retorna todas las aristas del grafo.
+        :return: Lista de aristas.
+        """
+        pass
+
+    @abstractmethod
+    def bloquear_arista(self, origen: str, destino: str) -> None:
+        """
+        Bloquea la arista entre origen y destino.
+        :param origen: Código IATA de origen.
+        :param destino: Código IATA de destino.
+        """
+        pass
+
+    @abstractmethod
+    def desbloquear_arista(self, origen: str, destino: str) -> None:
+        """
+        Desbloquea la arista entre origen y destino.
+        :param origen: Código IATA de origen.
+        :param destino: Código IATA de destino.
         """
         pass

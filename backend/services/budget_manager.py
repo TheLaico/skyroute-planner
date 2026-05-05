@@ -3,12 +3,14 @@ from backend.config import Config
 from backend.models.job import Trabajo
 from backend.utils import validators
 from backend.algorithms.dfs import DFS
+from typing import Optional
+
 
 class BudgetManagerService(IService):
     """
     Servicio para gestionar el presupuesto, ingresos y egresos de la simulación.
     """
-    def __init__(self, initial_budget: float, config: Config):
+    def __init__(self, config: Config, initial_budget: float = 0.0):
         self.initial_budget = initial_budget
         self.current_budget = initial_budget
         self.total_spent = 0.0
@@ -17,11 +19,12 @@ class BudgetManagerService(IService):
         self._jobs_done = []
         self.threshold_pct = config.budget_threshold_pct
 
-    def run(self, **kwargs):
+    def run(self, **kwargs) -> dict:
         """
         No aplica directamente. Usar los métodos específicos de gestión de presupuesto.
+        :return: Estado actual del presupuesto.
         """
-        pass
+        return self.get_status()
 
     def spend(self, amount: float) -> dict:
         """
@@ -73,6 +76,7 @@ class BudgetManagerService(IService):
         self.total_earned = 0.0
         self._jobs_done = []
 
+
 class AdvancedPlannerService(IService):
     """
     Servicio avanzado de planificación que integra DFS y gestión de presupuesto.
@@ -83,10 +87,12 @@ class AdvancedPlannerService(IService):
         self.budget_manager = budget_manager
         self.dfs = DFS(grafo)
 
-    def run(self, origen: str, initial_budget: float, tipos_aeronave: list) -> dict:
+    def run(self, origen: str, initial_budget: float, tipos_aeronave: Optional[list] = None) -> dict:
         """
         Ejecuta DFS para encontrar la ruta de mayor cobertura con menor gasto y retorna el estado de presupuesto.
         """
+        if tipos_aeronave is None:
+            tipos_aeronave = []
         resultado = self.dfs.execute(origen, initial_budget, tipos_aeronave, optimizar="cost")
         status = self.budget_manager.get_status()
         return {"dfs_result": resultado, "budget_status": status}

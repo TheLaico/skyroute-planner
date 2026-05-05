@@ -1,8 +1,8 @@
 from collections import deque
 from typing import Dict, List, Set, Any
 from backend.algorithms.base_algorithm import AlgoritmoBase
-from backend.core.edge import Arista
-from backend.core.node import Nodo
+from backend.core.arista import Arista
+from backend.core.nodo import Nodo
 
 class BFS(AlgoritmoBase):
     """
@@ -87,3 +87,4 @@ class BFS(AlgoritmoBase):
             "destinations_count": max_destinos,
             "algorithm_used": "bfs"
         }
+

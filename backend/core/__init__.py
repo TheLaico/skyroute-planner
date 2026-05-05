@@ -1,3 +1,3 @@
-from .graph import Graph
-from .node import Node
-from .edge import Edge
+﻿from .grafo import Grafo
+from .nodo import Nodo
+from .arista import Arista
